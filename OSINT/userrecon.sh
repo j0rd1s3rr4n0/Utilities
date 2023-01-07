@@ -54,16 +54,6 @@ elif [[ $check_websitenet == *'0'* ]]; then
 printf "\e[1;92m Found!\e[0m http://%s.net\n" $username
 printf "http://%s.net\n" $username > $username.txt
 fi
-##Website Domain github
-check_websitenet=$(curl -s -H "Accept-Language: en" "https://$username.github.io" -L | grep -o '<h1>404</h1>'; echo $?)
-printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Website Github.io : \e[0m"
-
-if [[ $check_websitenet == *'1'* ]]; then
-printf "\e[1;92m Found!\e[0m https://%s.github.io\n" $username
-printf "https://%s.github.io\n" $username > $username.txt
-elif [[ $check_websitenet == *'0'* ]]; then
-printf "\e[1;31mNot Found!\e[0m\n"
-fi
 
 ##Website Domain org
 check_websiteorg=$(curl -s -H "Accept-Language: en" "http://$username.org" -L | grep -o '</html>'; echo $?)
