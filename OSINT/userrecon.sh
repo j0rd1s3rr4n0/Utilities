@@ -613,6 +613,17 @@ elif [[ $check_websitenet == *'0'* ]]; then
 printf "\e[1;31mNot Found!\e[0m\n"
 fi
 
+
+##Website BE REAL
+check_websitenet=$(curl -s -H "Accept-Language: en" "https://bere.al/$username" -L | grep -o '<h1>404</h1>'; echo $?)
+printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Website BE.REAL : \e[0m"
+
+if [[ $check_websitenet == *'1'* ]]; then
+printf "\e[1;92m Found!\e[0m https://bere.al/%s\n" $username
+printf "https://bere.al/%s\n" $username > $username.txt
+elif [[ $check_websitenet == *'0'* ]]; then
+printf "\e[1;31mNot Found!\e[0m\n"
+fi
 ## TUMBLR
 
 printf "\e[1;77m[\e[0m\e[1;92m+\e[0m\e[1;77m] Tumblr: \e[0m"
