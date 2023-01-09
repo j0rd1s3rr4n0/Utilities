@@ -52,25 +52,6 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])? """,end="")
         print(f'{os.getlogin()}@{self.random_ip()}\'s password:',end="\n\n")
         time.sleep(2.1)
 
-#         print(f"""
-# C:\\Users\\{os.getlogin()}>ssh {os.getlogin()}@{self.random_ip()} -p {self.random_port()}
-
-# The authenticity of host \'[@{self.random_ip()}]:{self.random_port()} ([@{self.random_ip()}]:{self.random_port()})\' can\'t be established.
-# ED25519 key fingerprint is SHA256:+{self.generar_sha256(self.random_cadena())}.
-# This host key is known by the following other names/addresses:
-#     C:\\Users\\{os.getlogin()}/.ssh/known_hosts:1: [{platform.node()}]:{self.random_port()}
-# Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
-
-# Warning: Permanently added \'[@{self.random_ip()}]:{self.random_port()}\' (ED25519) to the list of known hosts.
-# {os.getlogin()}@{self.random_ip()}\'s password:
-# Permission denied, please try again.
-# {os.getlogin()}@{self.random_ip()}\'s password:
-# Permission denied, please try again.
-# {os.getlogin()}@{self.random_ip()}\'s password:
-# Arch Linux strongly advises you not to run commands as the root user, who has
-# the highest privileges on the system. Doing so may cause major damages
-# to the system. Please note that if you choose to proceed, all consequences are
-# at your own risk.""")
     
     def random_cadena(self):
         ws = [str(random.randint(0, 255)) for _ in range(265)]
